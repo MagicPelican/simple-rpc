@@ -7,8 +7,8 @@
 
 ### 如何使用
 - 如何提供服务：
-  1、在启动类上添加 @EnableSimpleRpc 注解
-  2、在提供服务的接口实现类上，添加 @SimpleRpcService 注解
+  1. 在启动类上添加 @EnableSimpleRpc 注解
+  2. 在提供服务的接口实现类上，添加 @SimpleRpcService 注解
   
 - 如何调用服务：
   只需在属性或set方法上添加 @SimpleRpcResource 注解即可，类似 spring 的 @Autowired
