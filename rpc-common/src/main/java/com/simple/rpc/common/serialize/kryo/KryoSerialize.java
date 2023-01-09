@@ -85,21 +85,4 @@ public class KryoSerialize implements RpcSerialize {
     }
 
 
-    public Message deserialize(byte[] data) {
-        Kryo kryo = kryoPool.obtain();
-        Input input = inputPool.obtain();
-
-        try {
-//            final ByteArrayInputStream inputStream = new ByteArrayInputStream(data);
-//            input.setInputStream(inputStream);
-
-            input.setBuffer(data);
-            return kryo.readObject(input, Message.class);
-
-        } finally {
-            kryoPool.free(kryo);
-            inputPool.free(input);
-        }
-    }
-
 }
