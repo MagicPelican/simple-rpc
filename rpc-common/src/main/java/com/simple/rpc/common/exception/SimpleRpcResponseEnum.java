@@ -25,6 +25,7 @@ public enum SimpleRpcResponseEnum {
     noServiceProviderEnabled(302, "No service provider enabled"),
     providerUnableToConnect(303, "Service provider unable to connect"),
     requestProviderErr(304, "Provider call exception"),
+    requestProviderNoneErr(305, "The provider returned empty"),
 
     ;
 

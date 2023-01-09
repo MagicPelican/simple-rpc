@@ -32,11 +32,10 @@ public class ProviderRpcProxy implements MethodInterceptor {
         // 结果处理
         Response response = responseMessage.getContent();
         if (response == null) {
-            throw SimpleRpcResponseEnum.requestProviderErr.getException4Msg(requestMessage.toString());
+            throw SimpleRpcResponseEnum.requestProviderNoneErr.getException();
         }
         if (response.getCode() != 0) {
-            throw SimpleRpcResponseEnum.requestProviderErr.getException4Msg("request: " + requestMessage.toString()
-                    + "response: " + response.toString());
+            throw SimpleRpcResponseEnum.requestProviderErr.getException4Msg("errMsg: " + response.getErrMsg());
         }
         return response.getResult();
     }
